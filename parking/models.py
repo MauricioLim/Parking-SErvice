@@ -11,6 +11,9 @@ class ParkingSpot(models.Model):
     class Meta:
         verbose_name = 'Vaga'
         verbose_name_plural = 'Vagas'
+    
+    def __str__(self):
+        return self.spot_number
 
 class ParkingRecord (models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.PROTECT, related_name='parking_records', verbose_name='Veiculo')
